@@ -15,15 +15,14 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  */
 class SettingsType extends AbstractType
 {
-    protected array $settingsConfiguration;
-
-    public function __construct(array $settingsConfiguration)
+    public function __construct(protected array $settingsConfiguration)
     {
-        $this->settingsConfiguration = $settingsConfiguration;
     }
 
     /**
      * {@inheritdoc}
+     *
+     * @param array<string, mixed> $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {

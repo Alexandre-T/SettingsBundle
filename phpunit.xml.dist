@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- http://www.phpunit.de/manual/current/en/appendixes.configuration.html -->
+<!-- https://phpunit.readthedocs.io/en/9.5/configuration.html -->
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          colors="true"
-         convertErrorsToExceptions="true"
-         convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
-         processIsolation="false"
-         stopOnFailure="false"
          bootstrap="./vendor/autoload.php"
-         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+>
+
   <coverage>
     <include>
       <directory>./Controller</directory>
@@ -23,13 +20,16 @@
       <directory>./Twig</directory>
     </include>
   </coverage>
+
   <testsuites>
     <testsuite name="SettingsBundle Test Suite">
       <directory>./Tests</directory>
     </testsuite>
   </testsuites>
+
   <php>
     <ini name="opcache.load_comments" value="1"/>
     <ini name="zend_optimizerplus.load_comments" value="1"/>
   </php>
+
 </phpunit>
